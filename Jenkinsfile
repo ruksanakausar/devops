@@ -1,5 +1,10 @@
 pipeline {
-    agent {label 'manual'}
+    agent {label 'manual'} 
+    options {
+        // Timeout counter starts AFTER agent is allocated
+    timestamps() 
+        timeout(time:01 , unit: 'MINUTES')
+    }
 
     stages {
         stage('Build') {
