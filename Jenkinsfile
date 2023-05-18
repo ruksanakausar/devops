@@ -1,5 +1,5 @@
  pipeline {
-    agent {label 'manual'}
+    agent {label 'local'}
  options {
         // Timeout counter starts AFTER agent is allocated
     timestamps() 
