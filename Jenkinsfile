@@ -20,3 +20,19 @@ pipeline {
         }
     }
 }
+post { 
+        aborted { 
+            echo 'ABORTED'
+        }
+         success { 
+            echo 'SUCCESS'
+        }
+         failure { 
+            echo 'FAILURE'
+        }
+        changed { 
+            echo 'FAILURE'
+        }
+    }
+    
+}
