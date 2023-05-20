@@ -6,13 +6,13 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {
+            step {
                 echo "${USER}"
               //  sh "printenv | sort"
             }
         }
          stage('Build1') {
-            steps {
+            step {
                 echo '${microcare}'
                 echo '${devops}'
             }
@@ -22,7 +22,7 @@ pipeline {
              branch "ruksANA"
                   }
              }
-            steps {
+            step {
                 echo 'Building..'
             }
         }
