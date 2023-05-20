@@ -1,23 +1,13 @@
-pipeline {
-    agent{
-        label 'manual'
+pipeline{
+ agent any
+       environment{
+        microcare='academy'      
+       }
+       stages{
+              stage('build'){
+                     steps{
+                            echo '${microcare}'   
+                     }
+              }
+       }
 }
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-}
-
