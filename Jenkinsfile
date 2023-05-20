@@ -35,7 +35,7 @@ pipeline {
                 echo 'Building..'
             }
         }
-    }
+    
     post { 
         aborted { 
             echo 'ABORTED'
