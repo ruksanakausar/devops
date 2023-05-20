@@ -1,6 +1,6 @@
 pipeline {
-    agent{'manual'} 
-
+    agent{label'manual'
+}
     stages {
         stage('Build') {
             steps {
