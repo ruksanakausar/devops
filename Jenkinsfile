@@ -1,3 +1,4 @@
+
 node{
   def remote = [:]
   remote.name = 'oraclevm'
@@ -8,7 +9,7 @@ node{
   stage( 'checkout') {
     checkout scm
   }
-  stage('Remote local') {
+  stage('Remote SSH') {
    // writeFile file: 'abc.sh', text: 'ls -lrt'
    // sshScript remote: remote, script: "abc.sh"
     sshCommand remote : remote, command: "pwd"
@@ -16,10 +17,11 @@ node{
     sshCommand remote : remote, command: "pwd"
       sshCommand remote : remote, command: "ls -lrt"
   }
+  
   stage( 'Remote SSH 2') {
-    sshScript remote: remote, script: "./micro.sh"
+  sshScript remote: remote, script: "./micro.sh"
   }
    stage('Remote SSH 3') {
-  sshScript remote: remote, script "./micro.sh" 
+  sshScript remote: remote, script:  "./micro.sh" 
 }
-   }
+ }
