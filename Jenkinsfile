@@ -21,4 +21,8 @@ node{
       sshCommand remote : remote, command: "cd local_steps"
      sshCommand remote : remote, command: "pwd"
   }  
-        }
+        
+stage('Remote SSH 3') {
+  sshScript remote: remote, script "./micro.sh" 
+}
+   }
