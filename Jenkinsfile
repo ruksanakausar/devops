@@ -6,7 +6,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-            step {
+            steps {
                 //echo "${USER}"
               bat('set')
             }
@@ -52,4 +52,5 @@ pipeline {
             echo 'FAILURE'
         }
     } 
-}    
+
+}
