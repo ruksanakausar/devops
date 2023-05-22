@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             step {
                 //echo "${USER}"
-               sh "printenv | sort"
+              bat('set')
             }
         }
          stage('Build1') {
