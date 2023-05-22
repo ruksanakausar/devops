@@ -18,7 +18,8 @@ pipeline {
             }
         }
          stage('Build2') {
-             when {
+             when {          
+                 not {
              branch "ruksANA"
                   }
              }
@@ -28,6 +29,7 @@ pipeline {
         }
          stage('Build3') {
              when {
+                 not {
                 branch "ruksANA"
                  }
              }
