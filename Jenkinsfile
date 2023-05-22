@@ -12,7 +12,7 @@ pipeline {
             }
         }
          stage('Build1') {
-            step {
+            steps {
                 echo "${env.microcare}"
                 echo "${env.devops}"
             }
