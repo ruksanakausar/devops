@@ -23,7 +23,7 @@ pipeline {
              branch "ruksANA"
                   }
              }
-            step {
+            steps {
                 echo 'Building..'
             }
         }
@@ -37,7 +37,7 @@ pipeline {
                 echo 'Building..'
             }
         }
-    
+    }
     post { 
         aborted { 
             echo 'ABORTED'
@@ -52,4 +52,4 @@ pipeline {
             echo 'FAILURE'
         }
     } 
-}
+}    
