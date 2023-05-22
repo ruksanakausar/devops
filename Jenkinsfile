@@ -15,17 +15,11 @@ node{
       sshCommand remote : remote, command: "cd /home"
     sshCommand remote : remote, command: "pwd"
       sshCommand remote : remote, command: "ls -lrt"
-  }     
-  
-   stage('Remote SSH 2') {
-   // writeFile file: 'abc.sh', text: 'ls -lrt'
-   // sshScript remote: remote, script: "abc.sh"
-      sshCommand remote : remote, command: "sudo mkdir local_steps"
-      sshCommand remote : remote, command: "cd local_steps"
-     sshCommand remote : remote, command: "pwd"
-  }  
-        
-stage('Remote SSH 3') {
+  }
+  stage( 'Remote SSH 2') {
+    sshScript remote: remote, script: "./micro.sh"
+  }
+   stage('Remote SSH 3') {
   sshScript remote: remote, script "./micro.sh" 
 }
    }
