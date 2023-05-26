@@ -1,20 +1,24 @@
 pipeline {
     agent any
     environment{
-        microcare ='academy'
-        devops ='customvariables'
+        MICRO ='academy'
+        GIT_CRED =credentials('git') //ruksana_24:123a@A34//gitAPI
     }
     stages {
         stage('Build') {
             steps {
-                //echo "${USER}"
-              bat('set')
+                echo "${USER}"
+              // bat('set')
+              // sh "printenv | sort"
             }
         }
          stage('Build1') {
             steps {
-                echo "${env.microcare}"
-                echo "${env.devops}"
+                echo "${env.MICRO}"
+                // def password = ${GIT_CRED_PSW}
+                // sh'echo %env.GIT_CRED%'
+                // echo"{password}"
+                echo "${env.GIT_CRED_USR}"
             }
         }
          stage('Build2') {
@@ -34,7 +38,7 @@ pipeline {
                  }
              }
             steps {
-                echo 'Building..'
+                echo "${env.MICRO}"
             }
         }
     }
