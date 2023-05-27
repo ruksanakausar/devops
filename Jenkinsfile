@@ -18,6 +18,6 @@ node{
       sshCommand remote : remote, command: "ls -lrt"
   }
   stage('Remote SSH2') {
-    sshRemove remote: remote, path: "local_steps"
+sshPut remote: remote, from: 'abc.sh', into: '.'
   }
 }
