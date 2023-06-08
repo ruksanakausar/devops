@@ -23,7 +23,7 @@ pipeline {
         }
          stage('Run Image') {
            steps {
-               bat 'docker run --name d6 -p 7770:80 -d nginx02'
+               bat 'docker run --name d6 -p 7700:80 -d nginx02'
             }
          }
     }
