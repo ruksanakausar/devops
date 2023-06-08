@@ -8,7 +8,7 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t nginx02 .'
+              bat 'docker build -t nginx02 -f Dockerfile.'
             }
         }
         stage('Tag image'){
@@ -22,9 +22,8 @@ pipeline {
             }
         }
          stage('Run Image') {
-           
-            steps {
-               bat 'docker run --name jenkins_image -p 7770:80 -d nginx02
+           steps {
+               bat 'docker run --name d6 -p 7770:80 -d nginx02
             }
          }
     }
