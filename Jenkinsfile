@@ -13,17 +13,17 @@ pipeline {
         }
         stage('Tag image'){
         steps {
-            bat 'docker tag nginx02 ruksana123/nginx02
+            bat 'docker tag nginx02 ruksana123/nginx02'
         }
         }
         stage('Push image'){
-            steps{
-                bat 'docker push ruksana123/nginx02
+            steps {
+                bat 'docker push ruksana123/nginx02'
             }
         }
          stage('Run Image') {
            steps {
-               bat 'docker run --name d6 -p 7770:80 -d nginx02
+               bat 'docker run --name d6 -p 7770:80 -d nginx02'
             }
          }
     }
