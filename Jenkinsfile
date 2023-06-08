@@ -21,7 +21,7 @@ pipeline {
           
             steps {
                bat 'docker login -u ruksana123 -p 123a@A345'
-                bat 'docker push ubuntu_jenkins:latest'
+                bat 'docker push ruksana123/ubuntu_jenkins:latest'
             }
         }
     }
