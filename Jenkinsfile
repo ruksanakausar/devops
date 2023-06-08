@@ -8,7 +8,7 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t nginx02 -f Dockerfile.'
+              bat 'docker build -t nginx02 -f Dockerfile .'
             }
         }
         stage('Tag image'){
