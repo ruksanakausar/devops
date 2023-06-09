@@ -1,5 +1,5 @@
 # from base image node
-FROM node:8.11-slim
+ARG NODE_VERSION=8.11-slim
 FROM node:$NODE_VERSION
 
 LABEL "about"="This file is just am example to demonstarte the LABEL"
