@@ -8,22 +8,22 @@ pipeline {
         }
          stage('Build Image') {
             steps {
-              bat 'docker build -t alpine02 -f Dockerfile .'
+              bat 'docker build -t node -f Dockerfile1 .'
             }
         }
         stage('Tag image'){
         steps {
-            bat 'docker tag alpine02 ruksana123/alpine02'
+            bat 'docker tag node ruksana123/node'
         }
         }
         stage('Push image'){
             steps {
-                bat 'docker push ruksana123/alpine02'
+                bat 'docker push ruksana123/node'
             }
         }
          stage('Run Image') {
            steps {
-               bat 'docker run --name d7 -p 7720:80 -d alpine02'
+               bat 'docker run --name d9 -p 7730:80 -d node'
             }
          }
     }
