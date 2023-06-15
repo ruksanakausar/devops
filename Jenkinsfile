@@ -24,8 +24,8 @@ pipeline {
         }
         stage('push image') {
            steps {
-               bat 'sudo docker login -u ruksana123 -p 123a@A345'
-                bat 'sudo docker push ruksana123/newone'
+               bat 'docker login -u ruksana123 -p 123a@A345'
+                bat ' docker push ruksana123/newone'
             }
         }
     }
