@@ -8,22 +8,22 @@ pipeline {
         }
         stage('docker compose stop') {
            steps {
-               sh 'docker-compose down'
+               bat 'docker-compose down'
             }
         }
            stage('docker compose start') {
           
             steps {
-               sh 'docker-compose up -d'
+               bat 'docker-compose up -d'
             }
         }
         
          stage('push image') {
           
             steps {
-               sh 'sudo docker login -u ruksana123 -p 123a@A345'
-                sh 'sudo docker push ruksana123/newone'
-               // sh 'sudo docker push ruksana123/nginx'
+               bat 'sudo docker login -u ruksana123 -p 123a@A345'
+                bat 'sudo docker push ruksana123/newone'
+               // bat 'sudo docker push ruksana123/nginx'
             }
         }
     }
