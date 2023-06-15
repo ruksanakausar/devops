@@ -17,13 +17,15 @@ pipeline {
                bat 'docker-compose up -d'
             }
         }
-        
-         stage('push image') {
-          
-            steps {
+        stage('tag image'){
+            steps{
+                bat 'docker tag newone ruksana123/newone'
+            }
+        }
+        stage('push image') {
+           steps {
                bat 'sudo docker login -u ruksana123 -p 123a@A345'
                 bat 'sudo docker push ruksana123/newone'
-               // bat 'sudo docker push ruksana123/nginx'
             }
         }
     }
