@@ -23,8 +23,8 @@ pipeline {
           
             steps {
                sh 'sudo docker login -u ruksana123 -p 123a@A345'
-                sh 'sudo docker push ruksana123/compose_nginx_bu'
-               // sh 'sudo docker push ruksana123/compose_nginx_build:latest'
+                sh 'sudo docker push ruksana123/newone'
+               // sh 'sudo docker push ruksana123/nginx'
             }
         }
     }
