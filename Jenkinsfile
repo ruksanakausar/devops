@@ -7,8 +7,7 @@ pipeline {
             }
         }
         stage('docker compose stop') {
-          
-            steps {
+           steps {
                sh 'docker-compose down'
             }
         }
@@ -42,5 +41,4 @@ pipeline {
             echo 'FAILURE'
         }
     }
-    
-}
+    }
