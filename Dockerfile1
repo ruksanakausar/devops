@@ -1,0 +1,10 @@
+FROM alpine
+RUN mkdir -p -m 147 /opt/microcare
+WORKDIR /opt/microcare/rukku
+RUN echo "this is a new filein side image">image.txt
+ENV microcare=academy
+COPY microcare.html .
+
+CMD ["sh","-c","mkdir -p/opt/microcare/docker"]
+
+

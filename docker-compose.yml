@@ -1,0 +1,20 @@
+services:
+  DB:
+    image: postgres:latest
+    ports:
+        - "1521:5432"
+    environment:
+       - POSTGRES_HOST_AUTH_METHOD=trust
+       - POSTGRES_PASSWORD=microcare
+   container_name: DB
+     WEB:
+        image: nginx:latest
+        ports:
+           - "7799:80"
+        container_name: WEB
+      MID:
+        image:
+         ruksana123/new_nginx_image:latest
+         ports:
+            - "7766:80"
+         container_name: MID
