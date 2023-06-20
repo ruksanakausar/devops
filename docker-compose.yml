@@ -1,4 +1,5 @@
 services:
+<<<<<<< HEAD
   DB:
     image: postgres:latest
     ports:
@@ -18,3 +19,36 @@ services:
          ports:
             - "7766:80"
          container_name: MID
+=======
+     DB:
+      image: postgres:latest
+      ports:
+         - "1521:5432"
+      environment:
+         - POSTGRES_HOST_AUTH_METHOD=trust
+         - POSTGRES_PASSWORD=microcare
+      container_name: DB
+     WEB:
+        image: nginx:latest
+        ports:
+          - "7799:80"
+        container_name: WEB
+        volumes:
+           - "vol_nginx:/opt/composer"
+        depends_on:
+             - "MID"
+             - "DB"
+     MID:
+        build: ./
+        image: ruksana123/nginx02
+        ports:
+            - "7766:80"
+        container_name: MID
+        volumes:
+           - "vol_nginx:/opt/MID"
+volumes:
+           vol_nginx:
+              name: vol_nginx
+              external: true
+           
+>>>>>>> 0833768fb41d030e2811e4c559d4bff015dfa521
